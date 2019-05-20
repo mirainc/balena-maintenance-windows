@@ -152,7 +152,7 @@ func loopIteration(lock *flock.Flock) {
 			if locked {
 				fmt.Println("Lock taken successfully.")
 			} else {
-				fmt.Println("Failed to take lock, however no error reported.")
+				fmt.Println("Failed to take lock - locked by another thread.")
 			}
 		} else {
 			fmt.Println("In maintenance window, unlocking...")
