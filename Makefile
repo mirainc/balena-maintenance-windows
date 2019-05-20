@@ -7,5 +7,5 @@ run:
 	@docker run balena-maintenance-windows
 
 run-local:
-	go build
-	./balena-maintenance-windows
+	@go build
+	@./balena-maintenance-windows
