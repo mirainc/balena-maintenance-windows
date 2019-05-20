@@ -1,0 +1,1867 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Spr",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"lte",
+				"lte_dhcp_received"
+			],
+			[
+				"should",
+				"shouldLoginDevice\tbool ν"
+			],
+			[
+				"syn",
+				"sybServiceToken\t*models.DeviceServiceToken ν"
+			],
+			[
+				"syb",
+				"sybServiceToken\t*models.DeviceServiceToken ν"
+			],
+			[
+				"d",
+				"Debug\t ƒ"
+			],
+			[
+				"ser",
+				"Server"
+			],
+			[
+				"gener",
+				"generatePairingCodeInput\tstruct ʈ"
+			],
+			[
+				"payl",
+				"payload\tstring ν"
+			],
+			[
+				"payload",
+				"payloadBytes\t[]byte ν"
+			],
+			[
+				"pal",
+				"payloadStruct\tGeneratePairingCodeRequest ν"
+			],
+			[
+				"SY",
+				"SYB_PARTNER_API_URL\t ν"
+			],
+			[
+				"for",
+				"formattedDeviceId\tstring ƒ"
+			],
+			[
+				"resp",
+				"respData\t*LoginDeviceResponse ν"
+			],
+			[
+				"Req",
+				"RequestBody\tio.Reader ν"
+			],
+			[
+				"Reque",
+				"RequestTimeout\ttime.Duration ν"
+			],
+			[
+				"HTTPSPEC_",
+				"HTTPSPEC_COMMAND"
+			],
+			[
+				"Char",
+				"ChargebeeKey\tstring ν"
+			],
+			[
+				"Even",
+				"EventID\tstring ν"
+			],
+			[
+				"plan",
+				"planRolloverMap\tmap[string]string ν"
+			],
+			[
+				"Event",
+				"EventType\tstring ν"
+			],
+			[
+				"createresin",
+				"createResinUUID\t ν"
+			],
+			[
+				"Test",
+				"TestHasPermission\tstruct ʈ"
+			],
+			[
+				"Head",
+				"HeadingFont\tinterface{} ν"
+			],
+			[
+				"User",
+				"UserCustomThemes\tmodels.ThemeSlice ν"
+			],
+			[
+				"GetTheme",
+				"GetThemeResponse\tstruct ʈ"
+			],
+			[
+				"Gettheme",
+				"GetThemeResponse\tstruct ʈ"
+			],
+			[
+				"request",
+				"requestorPermissions\t ν"
+			],
+			[
+				"requ",
+				"requestorPermissions\t ν"
+			],
+			[
+				"GlobalGetUser",
+				"GlobalGetUserByUsername\t*User, error ƒ"
+			],
+			[
+				"StatusNot",
+				"StatusNotModified\t Ɩ"
+			],
+			[
+				"publishapp",
+				"PublishApplicationResponse\tstruct ʈ"
+			],
+			[
+				"GetApp",
+				"GetApplicationVersions\terr error ƒ"
+			],
+			[
+				"pres",
+				"presignedURLMap\t ν"
+			],
+			[
+				"Publis",
+				"PublishApplicationResponse\tstruct ʈ"
+			],
+			[
+				"Public",
+				"PublishApplicationResponse\tstruct ʈ"
+			],
+			[
+				"fetch",
+				"fetchApplicationVersion\t*ApplicationVersion, error ƒ"
+			],
+			[
+				"Publ",
+				"PublishApplicationResponse\tstruct ʈ"
+			],
+			[
+				"New",
+				"NewSession\t*session.Session ƒ"
+			],
+			[
+				"time",
+				"timeLimitMinutes\tint ν"
+			],
+			[
+				"pass",
+				"passwordHash\t ν"
+			],
+			[
+				"GetApplica",
+				"GetApplicationVersionResponse\tstruct ʈ"
+			],
+			[
+				"child",
+				"childResourceSelectConditionAuthorID\tstring ν"
+			],
+			[
+				"get",
+				"getDevice\t*Device, error ƒ"
+			],
+			[
+				"Exte",
+				"ExtendedValidationBody\tinterface ¡"
+			],
+			[
+				"sort",
+				"sortDeviceGroupDefaultSequence\tDeviceGroupDefaultSequenceSlice ƒ"
+			],
+			[
+				"Devi",
+				"DeviceDefaultSequenceSlice\tmodels.DeviceDefaultSequenceSlice ʈ"
+			],
+			[
+				"DeviceDefa",
+				"DeviceDefaultSequenceSlice\t[]*models.DeviceDefaultSequence ʈ"
+			],
+			[
+				"JWT",
+				"JWTConfig\tstruct ʈ"
+			],
+			[
+				"Gener",
+				"GenerateJWT\tstring ƒ"
+			],
+			[
+				"TestDevice",
+				"TestDeviceCreated\tstruct ʈ"
+			],
+			[
+				"TEstFile",
+				"TestFileUploadCreated\tstruct ʈ"
+			],
+			[
+				"GetFile",
+				"GetFileUploadProgressResponse\tstruct ʈ"
+			],
+			[
+				"File",
+				"FileUploadProgress\tstruct ʈ"
+			],
+			[
+				"register",
+				"registerResinID\t ν"
+			],
+			[
+				"StatusBad",
+				"StatusBadRequest\t Ɩ"
+			],
+			[
+				"ID",
+				"DeviceID\tstring ƒ"
+			],
+			[
+				"Put",
+				"PutFileUpload\terr error ƒ"
+			],
+			[
+				"TestFile",
+				"TestFileUploadCreated\tstruct ʈ"
+			],
+			[
+				"Mock",
+				"MockHandler\t*handler ν"
+			],
+			[
+				"DeviceGrou",
+				"DeviceGroups\tmodels.DeviceGroupSlice ν"
+			],
+			[
+				"TestDe",
+				"TestDeviceCreated\tstruct ʈ"
+			],
+			[
+				"Regi",
+				"RegistrationStatus\tinterface{} ν"
+			],
+			[
+				"re",
+				"registerResinUUID\t ν"
+			],
+			[
+				"Deployed",
+				"DeployedSequences\tinterface{} ν"
+			],
+			[
+				"Dev",
+				"DeviceDefaultSequences\tmodels.DeviceDefaultSequenceSlice ν"
+			],
+			[
+				"De",
+				"DeployedSequences\tinterface{} ν"
+			],
+			[
+				"App",
+				"ApplicationVars\ttypes.JSON ν"
+			],
+			[
+				"Pre",
+				"PresentationProperties\ttypes.JSON ν"
+			],
+			[
+				"fetchPresen",
+				"fetchPresentations\t[]*Presentation, error ƒ"
+			],
+			[
+				"upda",
+				"updatedStepsJSON\t ν"
+			],
+			[
+				"file",
+				"fileUploadStep\t ν"
+			],
+			[
+				"FileUp",
+				"FileUploadStep\tstruct ʈ"
+			],
+			[
+				"FileUpl",
+				"FileUpload\tstruct ʈ"
+			],
+			[
+				"T",
+				"ThumbnailURL\tinterface{} ν"
+			],
+			[
+				"Prese",
+				"PresentationProperties\t[]resources.PresentationProperty ʈ"
+			],
+			[
+				"Prin",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"Update",
+				"UpdateG\terror ƒ"
+			],
+			[
+				"Generate",
+				"GenerateThumbnail\tstruct ʈ"
+			],
+			[
+				"Va",
+				"Valid\tbool ν"
+			],
+			[
+				"Thu",
+				"ThumbnailGeneratedAt\tnull.Time ν"
+			],
+			[
+				"Get",
+				"GlobalGetPresentation\t*resources.Presentation, error ƒ"
+			],
+			[
+				"Stat",
+				"StatusCode\tint ν"
+			],
+			[
+				"htt",
+				"http\t package ρ"
+			],
+			[
+				"Sentr",
+				"SentryEnv\tstring ν"
+			],
+			[
+				"Init",
+				"InitAWSClients\t ƒ"
+			],
+			[
+				"PostPrees",
+				"PostPresentationResponse\tstruct ʈ"
+			],
+			[
+				"Ap",
+				"AppVersions\tmodels.ApplicationVersionSlice ν"
+			],
+			[
+				"SPrint",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"prese",
+				"presentationBOify\t*bo.PresentationBO ƒ"
+			],
+			[
+				"AlowedActi",
+				"AllowedActions\tstruct ʈ"
+			],
+			[
+				"GlobalGet",
+				"GlobalGetPresentation\t*Presentation, error ƒ"
+			],
+			[
+				"app",
+				"appVersionID\tstring ν"
+			],
+			[
+				"Applic",
+				"ApplicationDeploymentID\tstring ν"
+			],
+			[
+				"PostPres",
+				"PostPresentationResponse\tstruct ʈ"
+			],
+			[
+				"GetPresent",
+				"GetPresentationResponse\tstruct ʈ"
+			],
+			[
+				"TestPres",
+				"TestPresentationCreates\tstruct ʈ"
+			],
+			[
+				"GetPres",
+				"GetPresentationResponse\tstruct ʈ"
+			],
+			[
+				"han",
+				"HandleError\terror ƒ"
+			],
+			[
+				"seque",
+				"sequencePresentationCopies\tmap[string]models.SequencesPresentationSlice ν"
+			],
+			[
+				"seq",
+				"sequencePresentationCopies\tmodels.SequencesPresentationSlice ν"
+			],
+			[
+				"Resin",
+				"ResinUUIDValue\tstring ƒ"
+			],
+			[
+				"Set",
+				"SetDefaultForSlice\tinterface{} ƒ"
+			],
+			[
+				"SetDefa",
+				"SetDefaultForSlice\t[]interface{} ƒ"
+			],
+			[
+				"Ptr",
+				"PtrTo\treflect.Type ƒ"
+			],
+			[
+				"Ar",
+				"ArrayOf\treflect.Type ƒ"
+			],
+			[
+				"Globa",
+				"GlobalGetUserByUsername\t*User, error ƒ"
+			],
+			[
+				"order",
+				"orderByClause\t[]string ν"
+			],
+			[
+				"PostLog",
+				"PostLoginResponse\tstruct ʈ"
+			],
+			[
+				"Device",
+				"DeviceEnvironmentVariableMap\tmap[string]resin.DeviceEnvironmentVariable ʈ"
+			],
+			[
+				"s",
+				"Status\tinterface{} ν"
+			],
+			[
+				"need",
+				"needsResinEnvUpdate\tbool ν"
+			],
+			[
+				"ne",
+				"needsResinEnvUpdate\tbool ν"
+			],
+			[
+				"Save",
+				"Saveable\tinterface ¡"
+			],
+			[
+				"Regist",
+				"RegisterResinDevice\terror ƒ"
+			],
+			[
+				"ResinSet",
+				"ResinSetMetadataDirty\t ƒ"
+			],
+			[
+				"TestDeviceGroup",
+				"TestDeviceGroupUpdate\tstruct ʈ"
+			],
+			[
+				"Rel",
+				"ReloadAllGP\t ƒ"
+			],
+			[
+				"Insert",
+				"InsertGP\t ƒ"
+			],
+			[
+				"Dele",
+				"DeleteAllGP\t ƒ"
+			],
+			[
+				"M",
+				"MinorVersion\tint ν"
+			],
+			[
+				"Header",
+				"HeaderAuthorization\t Ɩ"
+			],
+			[
+				"C",
+				"CheckScopesOr\techo.MiddlewareFunc ƒ"
+			],
+			[
+				"Ne",
+				"NewV4\tuuid.UUID ƒ"
+			],
+			[
+				"Pub",
+				"PublishGroupMembership\terror ƒ"
+			],
+			[
+				"deviceGroup",
+				"deviceGroupBO\tbo.DeviceGroupBO ν"
+			],
+			[
+				"presen",
+				"presentationID\t ν"
+			],
+			[
+				"FindPrese",
+				"FindPresentationG\t*models.Presentation, error ƒ"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.go",
+			"settings":
+			{
+				"buffer_size": 415,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "package main"
+			}
+		},
+		{
+			"file": "Dockerfile",
+			"settings":
+			{
+				"buffer_size": 72,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 21,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "install:"
+			}
+		},
+		{
+			"contents": "{\n  \"folders\": [\n    {\n      \"path\": \".\"\n    }\n  ],\n  \"settings\": {\n    \"env_file\": {\n      \"Darwin\": \"~/src/mira-api/localenv.sh\"\n    },\n    \"env\": {\n      \"Darwin\": {\n        \"HELLO\": \"WORLD\"\n      }\n    }\n  },\n  \"build_systems\": [\n    {\n      \"name\": \"Go Build\",\n      \"shell_cmd\": \"echo Building... && go build\"\n    },\n    {\n      \"name\": \"Go Test\",\n      \"shell_cmd\": \"echo Building... && go test\"\n    },\n    {\n      \"name\": \"Go Test with Coverage\",\n      \"shell_cmd\": \"echo Building... && go test -coverprofile=cover.out\"\n    },\n    {\n      \"name\": \"Go Test All\",\n      \"shell_cmd\": \"echo Building all... && cd ~/src/mira-api/src && go test ./...\"\n    }\n  ]\n}\n",
+			"settings":
+			{
+				"buffer_size": 666,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Cross-Compile (Interactive)"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Golang Build/Go.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Cross-Compile (Interactive)"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/GoSublime/GoSublime.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Golang Build/Go.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"bash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"dockerfile",
+				"Set Syntax: Dockerfile"
+			],
+			[
+				"wrp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"previw",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"mini",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"pertt",
+				"Pretty JSON: Validate"
+			],
+			[
+				"go",
+				"Set Syntax: Go"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"syntax json",
+				"Set Syntax: JSON"
+			],
+			[
+				"syntaxjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"enable",
+				"Disable/Enable buildview for this window"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"disble",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"syntax",
+				"Set Syntax: Go"
+			],
+			[
+				"jsonform",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"syntax go",
+				"Set Syntax: Go"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"prettyvalid",
+				"Pretty JSON: Validate"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"rpetty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pre",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"preferences",
+				"Preferences: Browse Packages"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"linter",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"prefssub",
+				"Preferences: SublimeLinter Settings – User"
+			]
+		],
+		"width": 448.0
+	},
+	"console":
+	{
+		"height": 158.0,
+		"history":
+		[
+			"print(\"hello\")",
+			"print",
+			"hello",
+			"quit()",
+			"exit()",
+			"exit",
+			"echo $DB_USER"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/aric/gocode/src/github.com/mirainc/balena-maintenance-windows"
+	],
+	"file_history":
+	[
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/untitled.Dockerfile",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/Makefile",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/localPhoton/config/Dockerfile/install_photon",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/Dockerfile",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/start.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/buster.list",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/default-release",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/README.md",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/music/sdk/include/splayerapi/splayerapi-1.h",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/setup.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/music/sdk/src/mira-music.c",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/music/sdk/src/audio_output_alsa.c",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/localPhoton.bash",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/default.pa",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/etc.default.pa",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/logger/start.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/MINIX-Z83-4_usr_share_alsa_ucm_chtrt5645_HiFi.conf",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/setup_lte.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/.xinitrc",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/device_detect.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/pulseaudio.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/linuxium_install_UCM_files.sh",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/localPhoton/config/Dockerfile/xinitrc",
+		"/Users/aric/src/mira-link-resin-intel-compute-stick-stk1a32sc/main/sierra.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/deploy.env",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/router.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/devices.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/user_context.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/devices_syb.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/syb/api.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/docker-compose.yml",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/syb/syb.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/v2.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/resin.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/resin/resin.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/resin/device_service_variable.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/main.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/Makefile",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/README.md",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/post-devices-:id-actions-enable_dev_url.htsf",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/devices.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/post-devices-:id-actions-disable_dev_url.htsf",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/run-http-specs",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/test_data.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/generate_dev_envs.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/update_eb.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/staging.env",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/generate_staging_envs.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/dev.env",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/post-devices-:id-actions-generate_pairing_code.htsf",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init_v1.3.4.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/.gitignore",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/models/devices.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init_v.1.3.2.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/local.env",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/migrations/local.env.yaml",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/device_bo.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/envs.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/publishing.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/get-devices-:id-syb-sound_zone.htsf",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/interfaces.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/Godeps/Godeps.json",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/Dockerfile",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/clean_api.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/models/device_service_tokens.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/syb/partner.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init_v1.3.2.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/docker-compose.sqlboiler.yml",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/dev.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/db.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/sqlboiler.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/generate_models.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/Dockerfile.compile",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/Dockerfile.dev",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/user.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/config/config.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/repro.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/repro.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/resources.go",
+		"/Users/aric/Desktop/set balena tag set freezeFixPriority 0 --device eb5185",
+		"/Users/aric/src/cs-6250-project-4/ahuang98_p4/myURLS.pages",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/tempfiles/src/v2_handlers/v2.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/codeship-services.yml",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/tempfiles/.gitignore",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/http-spec/Dockerfile",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/devices_test.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/tests/tests.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/Dockerfile.db",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/codeship-steps.yml",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/schedules.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/presentations.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/new_publish_model_schema.txt",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/presentation_bo.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/chargebee.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/chargebee/chargebee.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/scripts/clean_db.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/vendor/github.com/chargebee/chargebee-go/http_util.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/vendor/github.com/chargebee/chargebee-go/actions/subscription/subscription.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/vendor/github.com/chargebee/chargebee-go/environment.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/vendor/github.com/chargebee/chargebee-go/request.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init_v1.0.4.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/models/themes.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/default_sequences.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/application_versions.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/users.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/device_groups.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/models/device_default_sequence.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/device_groups.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/presentations_test.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/themes.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/themes_test.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/themes.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/sql/init_v1.2.7.sql",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/models/presentations.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/presentations.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/presentation_validation.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/jobs.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/test_base.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/base_test.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/file_uploads.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers/chargebee_test.go",
+		"/Volumes/STUFF/rock64/install_mira-photon.sh",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/presentation_objs.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo/presentation_bo_test.go",
+		"/Users/aric/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/user_context_themes_test.go",
+		"/Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources/user_context_test.go"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 111.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"golang"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								366
+							]
+						],
+						"settings":
+						{
+							"SL.2124.region_keys":
+							[
+							],
+							"auto_name": "package main",
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/GoSublime/something_borrowed/Go/Go.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "Dockerfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"auto_name": "install:",
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/aric/Library/Application Support/Sublime Text 3/Packages/GoSublime":
+	{
+		"height": 128.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/balena-maintenance-windows":
+	{
+		"height": 133.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api":
+	{
+		"height": 258.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/sql":
+	{
+		"height": 122.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src":
+	{
+		"height": 266.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/auth":
+	{
+		"height": 329.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/bo":
+	{
+		"height": 422.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/cognito":
+	{
+		"height": 246.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/neuron":
+	{
+		"height": 212.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/neuron/logs":
+	{
+		"height": 98.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/pubsub":
+	{
+		"height": 98.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/resin":
+	{
+		"height": 207.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/clients/screenshots":
+	{
+		"height": 116.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/handlers":
+	{
+		"height": 272.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/models":
+	{
+		"height": 264.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/publishing":
+	{
+		"height": 259.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/resources":
+	{
+		"height": 220.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/router":
+	{
+		"height": 250.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/router/middleware":
+	{
+		"height": 238.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/so/semver":
+	{
+		"height": 262.0
+	},
+	"output.9o:///Users/aric/gocode/src/github.com/mirainc/mira-api/src/v2_handlers":
+	{
+		"height": 370.0
+	},
+	"output.9o:///Users/aric/src/mira-api/src/handlers":
+	{
+		"height": 98.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 116.0
+	},
+	"output.GsDoc-output-output":
+	{
+		"height": 98.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 122.0
+	},
+	"output.exec":
+	{
+		"height": 353.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.golang_build":
+	{
+		"height": 253.0
+	},
+	"output.gotools_syntax_errors":
+	{
+		"height": 144.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 134.0
+	},
+	"pinned_build_system": "Packages/GoSublime/GoSublime.sublime-build",
+	"project": "balena-maintenance-windows.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dokercompose",
+				"docker-compose.yml"
+			],
+			[
+				"updatedockerfile",
+				"update-supervisor/Dockerfile"
+			],
+			[
+				"mira-music",
+				"music/sdk/src/mira-music.c"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"start.sh",
+				"main/start.sh"
+			],
+			[
+				"default",
+				"main/default-release"
+			],
+			[
+				"makefile",
+				"Makefile"
+			],
+			[
+				"bash local",
+				"localPhoton.bash"
+			],
+			[
+				"dockerfile",
+				"main/Dockerfile"
+			],
+			[
+				"devicedetect",
+				"main/device_detect.sh"
+			],
+			[
+				"setup.sh",
+				"main/setup.sh"
+			],
+			[
+				"device",
+				"main/device_detect.sh"
+			],
+			[
+				"setuple",
+				"main/setup_lte.sh"
+			],
+			[
+				"pulseaudio",
+				"main/pulseaudio.sh"
+			],
+			[
+				"xinitrc",
+				"main/.xinitrc"
+			],
+			[
+				"setlte",
+				"main/setup_lte.sh"
+			],
+			[
+				"xinit",
+				"main/.xinitrc"
+			],
+			[
+				"sierra.sh",
+				"main/sierra.sh"
+			],
+			[
+				"maindocker",
+				"main/Dockerfile"
+			],
+			[
+				"xinitc",
+				"main/.xinitrc"
+			],
+			[
+				"default.pa",
+				"main/default.pa"
+			],
+			[
+				"miramusic",
+				"music/sdk/src/mira-music.c"
+			],
+			[
+				"docker-compose",
+				"docker-compose.yml"
+			],
+			[
+				"dev.sh",
+				"scripts/dev.sh"
+			],
+			[
+				"dockerfile.dev",
+				"Dockerfile.dev"
+			],
+			[
+				"dockercompose",
+				"docker-compose.yml"
+			],
+			[
+				"handlerdevicesyb",
+				"src/v2_handlers/devices_syb.go"
+			],
+			[
+				"metric",
+				"src/v2_handlers/devices_metrics.go"
+			],
+			[
+				"syb",
+				"src/clients/syb/syb.go"
+			],
+			[
+				"router.go",
+				"src/v2_handlers/router.go"
+			],
+			[
+				"udpateeb",
+				"scripts/update_eb.sh"
+			],
+			[
+				"deploy.env",
+				"deploy.env"
+			],
+			[
+				"generate",
+				"generate_dev_envs.sh"
+			],
+			[
+				"staging.env",
+				"staging.env"
+			],
+			[
+				"router",
+				"src/v2_handlers/router.go"
+			],
+			[
+				"dev.env",
+				"dev.env"
+			],
+			[
+				"handlerdevices",
+				"src/v2_handlers/devices.go"
+			],
+			[
+				"testdata",
+				"sql/test_data.sql"
+			],
+			[
+				"http",
+				"http-spec/post-devices-:id-actions-generate_pairing_code.htsf"
+			],
+			[
+				"main",
+				"src/main.go"
+			],
+			[
+				"clientresin",
+				"src/clients/resin/resin.go"
+			],
+			[
+				"",
+				"sql/init_v1.3.3.sql"
+			],
+			[
+				"handlersdevices",
+				"src/v2_handlers/devices.go"
+			],
+			[
+				"modeldevices",
+				"src/models/devices.go"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"staging",
+				"staging.env"
+			],
+			[
+				"docercompose",
+				"docker-compose.yml"
+			],
+			[
+				"updateeb",
+				"scripts/update_eb.sh"
+			],
+			[
+				"main.go",
+				"src/main.go"
+			],
+			[
+				"devicebo",
+				"src/bo/device_bo.go"
+			],
+			[
+				"resourcesdevices",
+				"src/resources/devices.go"
+			],
+			[
+				"publish",
+				"src/bo/publishing.go"
+			],
+			[
+				"handlerdevice",
+				"src/v2_handlers/devices.go"
+			],
+			[
+				"resourcesdevice",
+				"src/resources/devices.go"
+			],
+			[
+				"modelsdevices",
+				"src/models/devices.go"
+			],
+			[
+				"godeps",
+				"src/Godeps/Godeps.json"
+			],
+			[
+				"soundzoneh",
+				"http-spec/get-devices-:id-syb-sound_zone.htsf"
+			],
+			[
+				"deployenv",
+				"deploy.env"
+			],
+			[
+				"dockercompos",
+				"docker-compose.yml"
+			],
+			[
+				"docker ",
+				"Dockerfile"
+			],
+			[
+				"context",
+				"src/resources/user_context.go"
+			],
+			[
+				"api.go",
+				"src/clients/syb/api.go"
+			],
+			[
+				"devicessyb",
+				"src/v2_handlers/devices_syb.go"
+			],
+			[
+				"resourcesint",
+				"src/resources/interfaces.go"
+			],
+			[
+				"gode",
+				"src/Godeps/Godeps.json"
+			],
+			[
+				"htsf",
+				"http-spec/get-devices-:id-syb-sound_zone.htsf"
+			],
+			[
+				"modeldeviceservi",
+				"src/models/device_service_tokens.go"
+			],
+			[
+				"modeltoken",
+				"src/models/device_service_tokens.go"
+			],
+			[
+				"1.3.2",
+				"sql/init_v1.3.2.sql"
+			],
+			[
+				"v1.3.2",
+				"sql/init_v1.3.2.sql"
+			],
+			[
+				"syb.go",
+				"src/clients/syb/syb.go"
+			],
+			[
+				"partner",
+				"src/clients/syb/partner.go"
+			],
+			[
+				"clientsyb",
+				"src/clients/syb/api.go"
+			],
+			[
+				"handlerssyb",
+				"src/v2_handlers/devices_syb.go"
+			],
+			[
+				"servicetoken",
+				"src/models/device_service_tokens.go"
+			],
+			[
+				"sqlboiler.",
+				"docker-compose.sqlboiler.yml"
+			],
+			[
+				"clean",
+				"scripts/clean_api.sh"
+			],
+			[
+				"genera",
+				"scripts/generate_models.sh"
+			],
+			[
+				"sqlboiler.yml",
+				"docker-compose.sqlboiler.yml"
+			],
+			[
+				"sqlboiler.sh",
+				"scripts/sqlboiler.sh"
+			],
+			[
+				"docker",
+				"Dockerfile.compile"
+			],
+			[
+				"resourcesuser",
+				"src/resources/user.go"
+			],
+			[
+				"resourcesdevi",
+				"src/resources/devices.go"
+			],
+			[
+				"clientssyb",
+				"src/clients/syb/syb.go"
+			],
+			[
+				"dockecompo",
+				"docker-compose.yml"
+			],
+			[
+				"test",
+				"sql/test_data.sql"
+			],
+			[
+				"httpspec",
+				"http-spec/get-devices-:id-syb-sound_zone.htsf"
+			],
+			[
+				"config.go",
+				"src/config/config.go"
+			],
+			[
+				"v2.go",
+				"src/v2_handlers/v2.go"
+			],
+			[
+				"dockercmpose",
+				"docker-compose.yml"
+			],
+			[
+				"resin",
+				"src/clients/resin/resin.go"
+			],
+			[
+				"handlerdevi",
+				"src/v2_handlers/devices.go"
+			],
+			[
+				"handlerdevicess",
+				"src/v2_handlers/devices_syb.go"
+			],
+			[
+				"router.o",
+				"src/v2_handlers/router.go"
+			],
+			[
+				"handler",
+				"src/v2_handlers/devices_test.go"
+			],
+			[
+				"cleanapi",
+				"scripts/clean_api.sh"
+			],
+			[
+				"makeifle",
+				"Makefile"
+			],
+			[
+				"codeshipser",
+				"codeship-services.yml"
+			],
+			[
+				"compile",
+				"Dockerfile.compile"
+			],
+			[
+				"docekrfile.db",
+				"Dockerfile.db"
+			],
+			[
+				"dockerfile.compile",
+				"Dockerfile.compile"
+			],
+			[
+				"tests.sh",
+				"tests/tests.sh"
+			],
+			[
+				"codeship",
+				"codeship-steps.yml"
+			],
+			[
+				"gitignore",
+				".gitignore"
+			],
+			[
+				"dockerfile.db",
+				"Dockerfile.db"
+			],
+			[
+				"publishing.go",
+				"src/bo/publishing.go"
+			],
+			[
+				"godep",
+				"src/Godeps/Godeps.json"
+			],
+			[
+				"clean.sh",
+				"scripts/clean_api.sh"
+			],
+			[
+				"init104",
+				"sql/init_v1.0.4.sql"
+			],
+			[
+				"chargebee",
+				"src/clients/chargebee/chargebee.go"
+			],
+			[
+				"chargebe",
+				"src/v2_handlers/chargebee.go"
+			],
+			[
+				"handlerspresent",
+				"src/v2_handlers/presentations.go"
+			],
+			[
+				"schedu",
+				"src/bo/schedules.go"
+			],
+			[
+				"devicegroup",
+				"src/resources/device_groups.go"
+			],
+			[
+				"defa",
+				"src/resources/default_sequences.go"
+			],
+			[
+				"models/device",
+				"src/models/devices.go"
+			],
+			[
+				"cleandb",
+				"scripts/clean_db.sh"
+			],
+			[
+				"handlersdevice",
+				"src/v2_handlers/devices.go"
+			],
+			[
+				"resourcesthemes",
+				"src/resources/themes.go"
+			],
+			[
+				"handlerthemes",
+				"src/v2_handlers/themes.go"
+			],
+			[
+				"presentations.go",
+				"src/models/presentations.go"
+			],
+			[
+				"presentationtest",
+				"src/v2_handlers/presentations_test.go"
+			],
+			[
+				"resourcesthem",
+				"src/resources/themes.go"
+			],
+			[
+				"them",
+				"src/models/themes.go"
+			],
+			[
+				"devicestest",
+				"src/v2_handlers/devices_test.go"
+			],
+			[
+				"resing.o",
+				"src/resources/resin.go"
+			],
+			[
+				"handlerpresentation",
+				"src/v2_handlers/presentations.go"
+			],
+			[
+				"jobs",
+				"src/v2_handlers/jobs.go"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 463.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 274.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

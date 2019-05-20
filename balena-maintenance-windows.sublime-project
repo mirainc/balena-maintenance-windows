@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "env_file": {
+      "Darwin": ""
+    },
+    "env": {
+      "Darwin": {
+        "HELLO": "WORLD"
+      }
+    }
+  },
+  "build_systems": [
+    {
+      "name": "Go Build",
+      "shell_cmd": "echo Building... && go build"
+    },
+    {
+      "name": "Go Test",
+      "shell_cmd": "echo Building... && go test"
+    },
+    {
+      "name": "Go Test with Coverage",
+      "shell_cmd": "echo Building... && go test -coverprofile=cover.out"
+    },
+    {
+      "name": "Go Test All",
+      "shell_cmd": "echo Building all... && cd ~/src/mira-api/src && go test ./..."
+    }
+  ]
+}
