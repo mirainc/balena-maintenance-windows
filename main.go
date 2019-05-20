@@ -1,12 +1,13 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net/url"
 	"os"
+	"strings"
 	"time"
 
-	// "github.com/dghubble/sling"
 	"github.com/gofrs/flock"
 	"github.com/levigross/grequests"
 )
@@ -15,6 +16,8 @@ var BALENA_API_KEY = os.Getenv("BALENA_API_KEY")
 var BALENA_DEVICE_UUID = os.Getenv("BALENA_DEVICE_UUID")
 var BALENA_API_BASE_URL = "https://api.balena-cloud.com"
 var MAINTENANCE_WINDOW_TAG_KEY = "MAINTENANCE_WINDOW"
+var TIME_FORMAT = "15:04:05-0700"
+var CHECK_INTERVAL = 1 * 60 * time.Second
 
 type BalenaDeviceTag struct {
 	Id     int    `json:"id"`
@@ -26,12 +29,12 @@ type BalenaDeviceTagResponse struct {
 	Data []BalenaDeviceTag `json:"d"`
 }
 
-type BalenaFilterParams struct {
-	Filter []string `url:"$filter"`
-}
-
-func (*BalenaFilterParams) EncodeValues(key string, v *url.Values) error {
-	return nil
+func UrlEncoded(str string) (string, error) {
+	u, err := url.Parse(str)
+	if err != nil {
+		return "", err
+	}
+	return u.String(), nil
 }
 
 func getLockfileLocation() (string, error) {
@@ -47,50 +50,54 @@ func getLockfileLocation() (string, error) {
 }
 
 func getMaintenanceWindow() (start *time.Time, end *time.Time, err error) {
-	start = nil
-	end = nil
+	maintenanceWindowValue, err := getMaintenanceWindowTagValue()
+	if err != nil {
+		fmt.Println("Failed to check tags from balena:", err.Error())
+		return nil, nil, err
+	}
 
-	resp, err := makeRequest()
-	fmt.Println("response status:", resp.StatusCode)
-	// fmt.Println(resp.Request.URL)
-	tags := new(BalenaDeviceTagResponse)
-	err = resp.JSON(tags)
+	return parseMaintenanceWindow(maintenanceWindowValue)
+}
+
+func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
+	values := strings.Split(value, "_")
+	if len(values) != 2 {
+		return nil, nil, errors.New(fmt.Sprintf("Expected 2 timestamps, received %d. Tag value: %s", len(values), value))
+	}
+
+	start, err := time.Parse(TIME_FORMAT, values[0])
+	if err != nil {
+		return nil, nil, err
+	}
+	end, err := time.Parse(TIME_FORMAT, values[1])
 	if err != nil {
 		return nil, nil, err
 	}
 
-	if err != nil {
-		fmt.Println("Failed to check tags from balena:", err.Error())
+	if start.After(end) {
+		return nil, nil, errors.New(fmt.Sprintf("Start time is after end time. Tag value: %s", value))
 	}
-	if len(tags.Data) == 0 {
-		fmt.Println("No maintenance window set, default to any time.")
-		return nil, nil, nil
-	} else {
-		window := tags.Data[0].Value
-		fmt.Println("Maintenance window found:", window)
-	}
-	return start, end, err
+
+	return &start, &end, err
 }
 
-func UrlEncoded(str string) (string, error) {
-	u, err := url.Parse(str)
-	if err != nil {
-		return "", err
-	}
-	return u.String(), nil
+func nowIsInMaintenanceWindow(start time.Time, end time.Time) bool {
+	// Get the current time
+	now := time.Now()
+	dateAgnosticNow := time.Date(0, 1, 1, now.Hour(), now.Minute(), now.Second(), now.Nanosecond(), now.Location())
+	fmt.Println("Start:", start)
+	fmt.Println("End:", end)
+	fmt.Println("Now:", dateAgnosticNow)
+
+	return isInMaintenanceWindow(dateAgnosticNow, start, end)
 }
 
-// func makeBalenaClient() *sling.Sling {
-// 	var httpClient = &http.Client{}
-// 	s := sling.New().
-// 		Base(BALENA_API_BASE_URL).
-// 		Client(httpClient).
-// 		Set("Content-Type", "application/json").
-// 		Set("Authorization", fmt.Sprintf("Bearer %s", BALENA_API_KEY))
-// 	return s
-// }
+func isInMaintenanceWindow(test time.Time, start time.Time, end time.Time) bool {
+	return test.After(start) && test.Before(end)
+}
 
-func makeRequest() (*grequests.Response, error) {
+// Fetch tag value from Balena
+func getMaintenanceWindowTagValue() (string, error) {
 	options := &grequests.RequestOptions{
 		Headers: map[string]string{
 			"Content-Type":  "application/json",
@@ -98,13 +105,73 @@ func makeRequest() (*grequests.Response, error) {
 		},
 		RequestTimeout: time.Duration(5) * time.Second,
 	}
-	url := fmt.Sprintf("%s/v4/device_tag?$filter=device/uuid%%20eq%%20'%s'&$filter=tag_key%%20eq%%20'%s'", BALENA_API_BASE_URL, BALENA_DEVICE_UUID, MAINTENANCE_WINDOW_TAG_KEY)
-	finalUrl, err := UrlEncoded(url)
-	fmt.Println(finalUrl)
+	filters, err := UrlEncoded(fmt.Sprintf("$filter=device/uuid eq '%s'&$filter=tag_key eq '%s'", BALENA_DEVICE_UUID, MAINTENANCE_WINDOW_TAG_KEY))
 	if err != nil {
-		return nil, err
+		return "", err
 	}
-	return grequests.Get(finalUrl, options)
+
+	url := fmt.Sprintf("%s/v4/device_tag?%s", BALENA_API_BASE_URL, filters)
+	resp, err := grequests.Get(url, options)
+	if err != nil {
+		return "", err
+	}
+	if !resp.Ok {
+		message := fmt.Sprintf("Request failed with response status code: %s", resp.StatusCode)
+		return "", errors.New(message)
+	}
+
+	tags := new(BalenaDeviceTagResponse)
+	err = resp.JSON(tags)
+	if err != nil {
+		return "", err
+	}
+
+	if len(tags.Data) == 0 {
+		fmt.Println("No maintenance window set, default to any time.")
+		return "", nil
+	} else {
+		window := tags.Data[0].Value
+		fmt.Println("Maintenance window found: [", window, "]")
+		return window, nil
+	}
+}
+
+func loopIteration(lock *flock.Flock) {
+	start, end, err := getMaintenanceWindow()
+	if err != nil {
+		fmt.Println("Failed to get maintenance window:", err.Error())
+	} else {
+		shouldLock := !nowIsInMaintenanceWindow(*start, *end)
+
+		if shouldLock {
+			fmt.Println("Not in maintenance window, taking lock...")
+			locked, err := lock.TryLock()
+			if err != nil {
+				fmt.Println("Failed to take lock:", err.Error())
+			}
+			if locked {
+				fmt.Println("Lock taken successfully.")
+			} else {
+				fmt.Println("Failed to take lock, however no error reported.")
+			}
+		} else {
+			fmt.Println("In maintenance window, unlocking...")
+			err := lock.Unlock()
+			if err != nil {
+				fmt.Println("Failed to unlock:", err.Error())
+			} else {
+				fmt.Println("Unlocked successfully.")
+			}
+		}
+	}
+	fmt.Println("Waiting...")
+}
+
+func loop(lock *flock.Flock) {
+	for {
+		loopIteration(lock)
+		time.Sleep(CHECK_INTERVAL)
+	}
 }
 
 func main() {
@@ -115,29 +182,10 @@ func main() {
 	}
 	fmt.Println("Using lock location:", lockfileLocation)
 
-	fileLock := flock.New(lockfileLocation)
+	lock := flock.New(lockfileLocation)
 
 	// Start check process.
-	start, end, err := getMaintenanceWindow()
-	fmt.Println(start)
-	fmt.Println(end)
+	loop(lock)
 
-	locked, err := fileLock.TryLock()
-	if err != nil {
-		// handle locking error
-		fmt.Println("Failed to take lock:", err.Error())
-	}
-
-	if locked {
-		// do work
-		fmt.Println("Lock taken successfully.")
-
-		fmt.Println("Unlocking...")
-		err := fileLock.Unlock()
-		if err != nil {
-			fmt.Println("Failed to unlock:", err.Error())
-		}
-	}
-
-	fmt.Println("Done.")
+	fmt.Println("Exited.")
 }
