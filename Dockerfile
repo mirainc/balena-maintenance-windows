@@ -7,11 +7,12 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 WORKDIR /go/src/app
 
-COPY ./main.go .
 COPY ./Gopkg.lock .
 COPY ./Gopkg.toml .
 
 RUN dep ensure
+
+COPY ./main.go .
 RUN go install -v ./...
 
 FROM balenalib/intel-nuc-debian:stretch-run-20190511
