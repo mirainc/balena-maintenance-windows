@@ -64,13 +64,13 @@ func getCheckInterval() time.Duration {
 	return interval
 }
 
-func getMaintenanceWindow() (start *time.Time, end *time.Time, err error) {
+func getMaintenanceWindow(now time.Time) (start *time.Time, end *time.Time, err error) {
 	maintenanceWindowValue, err := getMaintenanceWindowTagValue()
 	if err != nil {
 		return nil, nil, err
 	}
 
-	return parseMaintenanceWindow(maintenanceWindowValue)
+	return parseMaintenanceWindow(maintenanceWindowValue, now)
 }
 
 func getTimeFromStringOnSpecificDay(time string, year int, month time.Month, day int) string {
@@ -78,8 +78,7 @@ func getTimeFromStringOnSpecificDay(time string, year int, month time.Month, day
 	return fullTime
 }
 
-func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
-	now := time.Now()
+func parseMaintenanceWindow(value string, now time.Time) (*time.Time, *time.Time, error) {
 	location := now.Location()
 
 	year := now.Year()
@@ -109,26 +108,34 @@ func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
 		return nil, nil, err
 	}
 
-	if start.After(end) {
-		return nil, nil, errors.New(fmt.Sprintf("Start time is after end time. Tag value: %s", value))
-	}
-
 	return &start, &end, err
 }
 
-func nowIsInMaintenanceWindow(start time.Time, end time.Time) bool {
-	// Get the current time
-	now := time.Now()
+func isInMaintenanceWindow(now time.Time, start time.Time, end time.Time) bool {
 
-	fmt.Println("Start:", start)
-	fmt.Println("End", end)
-	fmt.Println("Now:", now)
+	location := now.Location()
+	year := now.Year()
+	month := now.Month()
+	day := now.Day()
 
-	return isInMaintenanceWindow(now, start, end)
-}
-
-func isInMaintenanceWindow(test time.Time, start time.Time, end time.Time) bool {
-	return test.After(start) && test.Before(end)
+	if start.After(end) {
+		// Since start and end times are calibrated to the same day, this can
+		// happen if the time window expects to cross midnight, e.g. 22:00-02:00.
+		// Handle this by creating two time windows.
+		sodToday := time.Date(year, month, day, 0, 0, 0, 0, location)
+		eodToday := time.Date(year, month, day, 23, 59, 59, 999999999, location)
+		fmt.Println("Start of Day:", sodToday)
+		fmt.Println("End:", end)
+		fmt.Println("Start:", start)
+		fmt.Println("End of Day:", eodToday)
+		fmt.Println("Now:", now)
+		return (now.After(start) && now.Before(eodToday)) || (now.After(sodToday) && now.Before(end))
+	} else {
+		fmt.Println("Start:", start)
+		fmt.Println("End:", end)
+		fmt.Println("Now:", now)
+		return now.After(start) && now.Before(end)
+	}
 }
 
 // Fetch tag value from Balena
@@ -172,11 +179,12 @@ func getMaintenanceWindowTagValue() (string, error) {
 }
 
 func loopIteration(lock *flock.Flock) {
-	start, end, err := getMaintenanceWindow()
+	now := time.Now()
+	start, end, err := getMaintenanceWindow(now)
 	if err != nil {
 		fmt.Println("Failed to get maintenance window:", err.Error())
 	} else {
-		shouldLock := !nowIsInMaintenanceWindow(*start, *end)
+		shouldLock := !isInMaintenanceWindow(now, *start, *end)
 
 		if shouldLock {
 			fmt.Println("Not in maintenance window, taking lock...")
