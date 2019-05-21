@@ -17,6 +17,6 @@ RUN go install -v ./...
 FROM balenalib/intel-nuc-debian:stretch-run-20190511
 WORKDIR /go/src/app
 
-COPY --from=build /go/bin/app /go/bin/app
+COPY --from=build /go/bin/app /usr/local/bin/app
 
 CMD ["app"]
