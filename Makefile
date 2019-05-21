@@ -4,7 +4,8 @@ build:
 	@docker build -t mirainc/balena-maintenance-windows .
 
 run:
-	@docker run mirainc/balena-maintenance-windows
+	@touch .env
+	@docker run --env-file .env --name balena-maintenance-windows mirainc/balena-maintenance-windows
 
 run-local:
 	@dep ensure

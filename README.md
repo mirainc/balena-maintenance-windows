@@ -10,10 +10,15 @@ It uses the balena [Application Update Locking](https://www.balena.io/docs/learn
 
 ## Parameters
 
-Local device env vars used:
+balena internal env vars used:
 ```bash
 BALENA_API_KEY
 BALENA_DEVICE_UUID
+```
+
+Re
+```bash
+TIMEZONE=America/Los_Angeles
 ```
 
 Optional env vars respected:

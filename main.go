@@ -15,9 +15,10 @@ import (
 
 var BALENA_API_KEY = os.Getenv("BALENA_API_KEY")
 var BALENA_DEVICE_UUID = os.Getenv("BALENA_DEVICE_UUID")
+var TIMEZONE = os.Getenv("TIMEZONE")
 var BALENA_API_BASE_URL = "https://api.balena-cloud.com"
 var MAINTENANCE_WINDOW_TAG_KEY = "MAINTENANCE_WINDOW"
-var TIME_FORMAT = "15:04:05MST"
+var TIME_FORMAT = "2006/1/2T15:04:05"
 
 type BalenaDeviceTag struct {
 	Id     int    `json:"id"`
@@ -72,10 +73,22 @@ func getMaintenanceWindow() (start *time.Time, end *time.Time, err error) {
 	return parseMaintenanceWindow(maintenanceWindowValue)
 }
 
+func getTimeFromStringOnSpecificDay(time string, year int, month time.Month, day int) string {
+	fullTime := fmt.Sprintf("%d/%d/%dT%s", year, month, day, time)
+	return fullTime
+}
+
 func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
+	now := time.Now()
+	location := now.Location()
+
+	year := now.Year()
+	month := now.Month()
+	day := now.Day()
+
 	if value == "" {
-		start := time.Date(0, 1, 1, 0, 0, 0, 0, time.UTC)
-		end := time.Date(0, 1, 1, 23, 59, 59, 999999999, time.UTC)
+		start := time.Date(year, month, day, 0, 0, 0, 0, location)
+		end := time.Date(year, month, day, 23, 59, 59, 999999999, location)
 		return &start, &end, nil
 	}
 
@@ -84,11 +97,14 @@ func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
 		return nil, nil, errors.New(fmt.Sprintf("Expected 2 timestamps, received %d. Tag value: %s", len(values), value))
 	}
 
-	start, err := time.Parse(TIME_FORMAT, values[0])
+	startString := getTimeFromStringOnSpecificDay(values[0], year, month, day)
+	endString := getTimeFromStringOnSpecificDay(values[1], year, month, day)
+
+	start, err := time.ParseInLocation(TIME_FORMAT, startString, location)
 	if err != nil {
 		return nil, nil, err
 	}
-	end, err := time.Parse(TIME_FORMAT, values[1])
+	end, err := time.ParseInLocation(TIME_FORMAT, endString, location)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -103,15 +119,12 @@ func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
 func nowIsInMaintenanceWindow(start time.Time, end time.Time) bool {
 	// Get the current time
 	now := time.Now()
-	dateAgnosticNow := time.Date(0, 1, 1, now.Hour(), now.Minute(), now.Second(), now.Nanosecond(), now.Location())
 
 	fmt.Println("Start:", start)
-	fmt.Println("Start UTC:", start.UTC())
 	fmt.Println("End", end)
-	fmt.Println("End UTC:", end.UTC())
-	fmt.Println("Now:", dateAgnosticNow.UTC())
+	fmt.Println("Now:", now)
 
-	return isInMaintenanceWindow(dateAgnosticNow.UTC(), start.UTC(), end.UTC())
+	return isInMaintenanceWindow(now, start, end)
 }
 
 func isInMaintenanceWindow(test time.Time, start time.Time, end time.Time) bool {
