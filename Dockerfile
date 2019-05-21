@@ -9,10 +9,9 @@ WORKDIR /go/src/app
 
 COPY ./Gopkg.lock .
 COPY ./Gopkg.toml .
+COPY ./main.go .
 
 RUN dep ensure
-
-COPY ./main.go .
 RUN go install -v ./...
 
 FROM balenalib/intel-nuc-debian:stretch-run-20190511
