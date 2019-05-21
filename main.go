@@ -105,8 +105,10 @@ func nowIsInMaintenanceWindow(start time.Time, end time.Time) bool {
 	now := time.Now()
 	dateAgnosticNow := time.Date(0, 1, 1, now.Hour(), now.Minute(), now.Second(), now.Nanosecond(), now.Location())
 
-	fmt.Println("Start:", start.UTC())
-	fmt.Println("End:", end.UTC())
+	fmt.Println("Start:", start)
+	fmt.Println("Start UTC:", start.UTC())
+	fmt.Println("End", end)
+	fmt.Println("End UTC:", end.UTC())
 	fmt.Println("Now:", dateAgnosticNow.UTC())
 
 	return isInMaintenanceWindow(dateAgnosticNow.UTC(), start.UTC(), end.UTC())
