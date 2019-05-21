@@ -2,14 +2,6 @@
 
 
 [[projects]]
-  digest = "1:fba61d8584058169c5bd4625196f33077ba937f7131625d4440686c5e4cff380"
-  name = "github.com/dghubble/sling"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "e2624bf29a7de45ab0802b09aea94ca0a7815c5f"
-  version = "v1.2.0"
-
-[[projects]]
   digest = "1:d7b2d6ad2a9768bb5c9e3bfa4d9ceaa635ca2737cca288507986f116fa4b8da2"
   name = "github.com/gofrs/flock"
   packages = ["."]
@@ -25,12 +17,56 @@
   revision = "44c6ddd0a2342c386950e880b658017258da92fc"
   version = "v1.0.0"
 
+[[projects]]
+  digest = "1:c34de7e8f144a065dbcd5a5dab3dfc865d406545da86cd5a654fa720abfa8126"
+  name = "github.com/levigross/grequests"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d0df86deffcb5d344ab23de5a958d41e44659568"
+  version = "0.10"
+
+[[projects]]
+  branch = "master"
+  digest = "1:6b32e89d721bcc3f5ad131f7ea1c4926ecf2c49225feff288a1d2e9fd86c1bd3"
+  name = "golang.org/x/net"
+  packages = [
+    "idna",
+    "publicsuffix",
+  ]
+  pruneopts = "UT"
+  revision = "018c4d40a106a7ae83689758294fcd8d23850745"
+
+[[projects]]
+  digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
+  name = "golang.org/x/text"
+  packages = [
+    "collate",
+    "collate/build",
+    "internal/colltab",
+    "internal/gen",
+    "internal/language",
+    "internal/language/compact",
+    "internal/tag",
+    "internal/triegen",
+    "internal/ucd",
+    "language",
+    "secure/bidirule",
+    "transform",
+    "unicode/bidi",
+    "unicode/cldr",
+    "unicode/norm",
+    "unicode/rangetable",
+  ]
+  pruneopts = "UT"
+  revision = "342b2e1fbaa52c93f31447ad2c6abc048c63e475"
+  version = "v0.3.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/dghubble/sling",
     "github.com/gofrs/flock",
+    "github.com/levigross/grequests",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

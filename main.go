@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/url"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -16,8 +17,7 @@ var BALENA_API_KEY = os.Getenv("BALENA_API_KEY")
 var BALENA_DEVICE_UUID = os.Getenv("BALENA_DEVICE_UUID")
 var BALENA_API_BASE_URL = "https://api.balena-cloud.com"
 var MAINTENANCE_WINDOW_TAG_KEY = "MAINTENANCE_WINDOW"
-var TIME_FORMAT = "15:04:05-0700"
-var CHECK_INTERVAL = 1 * 60 * time.Second
+var TIME_FORMAT = "15:04:05MST"
 
 type BalenaDeviceTag struct {
 	Id     int    `json:"id"`
@@ -49,10 +49,23 @@ func getLockfileLocation() (string, error) {
 	return fmt.Sprintf("%s/updates.lock", result), nil
 }
 
+func getCheckInterval() time.Duration {
+	interval := 10 * 60 * time.Second
+	CHECK_INTERVAL_SECONDS := os.Getenv("CHECK_INTERVAL_SECONDS")
+	if CHECK_INTERVAL_SECONDS != "" {
+		parsedInterval, err := strconv.Atoi(CHECK_INTERVAL_SECONDS)
+		if err != nil {
+			fmt.Println("Failed to parse CHECK_INTERVAL_SECONDS, using default check interval.")
+		} else {
+			interval = time.Duration(parsedInterval) * time.Second
+		}
+	}
+	return interval
+}
+
 func getMaintenanceWindow() (start *time.Time, end *time.Time, err error) {
 	maintenanceWindowValue, err := getMaintenanceWindowTagValue()
 	if err != nil {
-		fmt.Println("Failed to check tags from balena:", err.Error())
 		return nil, nil, err
 	}
 
@@ -60,6 +73,12 @@ func getMaintenanceWindow() (start *time.Time, end *time.Time, err error) {
 }
 
 func parseMaintenanceWindow(value string) (*time.Time, *time.Time, error) {
+	if value == "" {
+		start := time.Date(0, 1, 1, 0, 0, 0, 0, time.UTC)
+		end := time.Date(0, 1, 1, 23, 59, 59, 999999999, time.UTC)
+		return &start, &end, nil
+	}
+
 	values := strings.Split(value, "_")
 	if len(values) != 2 {
 		return nil, nil, errors.New(fmt.Sprintf("Expected 2 timestamps, received %d. Tag value: %s", len(values), value))
@@ -85,11 +104,12 @@ func nowIsInMaintenanceWindow(start time.Time, end time.Time) bool {
 	// Get the current time
 	now := time.Now()
 	dateAgnosticNow := time.Date(0, 1, 1, now.Hour(), now.Minute(), now.Second(), now.Nanosecond(), now.Location())
-	fmt.Println("Start:", start)
-	fmt.Println("End:", end)
-	fmt.Println("Now:", dateAgnosticNow)
 
-	return isInMaintenanceWindow(dateAgnosticNow, start, end)
+	fmt.Println("Start:", start.UTC())
+	fmt.Println("End:", end.UTC())
+	fmt.Println("Now:", dateAgnosticNow.UTC())
+
+	return isInMaintenanceWindow(dateAgnosticNow.UTC(), start.UTC(), end.UTC())
 }
 
 func isInMaintenanceWindow(test time.Time, start time.Time, end time.Time) bool {
@@ -164,13 +184,13 @@ func loopIteration(lock *flock.Flock) {
 			}
 		}
 	}
-	fmt.Println("Waiting...")
 }
 
-func loop(lock *flock.Flock) {
+func loop(lock *flock.Flock, interval time.Duration) {
 	for {
 		loopIteration(lock)
-		time.Sleep(CHECK_INTERVAL)
+		fmt.Println("Waiting", interval.Seconds(), "seconds...")
+		time.Sleep(interval)
 	}
 }
 
@@ -182,10 +202,13 @@ func main() {
 	}
 	fmt.Println("Using lock location:", lockfileLocation)
 
+	interval := getCheckInterval()
+	fmt.Println("Check interval (seconds):", interval.Seconds())
+
 	lock := flock.New(lockfileLocation)
 
 	// Start check process.
-	loop(lock)
+	loop(lock, interval)
 
 	fmt.Println("Exited.")
 }
