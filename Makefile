@@ -12,5 +12,5 @@ run-local:
 	@go build
 	@./balena-maintenance-windows
 
-push-docker-hub:
+push-docker-hub: build
 	@docker push mirainc/balena-maintenance-windows:$(tag)
