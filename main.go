@@ -52,13 +52,11 @@ func loopIteration(lock *flock.Flock) {
 		return
 	}
 
-	start, end, err := timeutils.ParseMaintenanceWindow(maintenanceWindowValue, now)
+	inWindow, err := timeutils.IsInMaintenanceWindow(maintenanceWindowValue, now)
 	if err != nil {
 		fmt.Println("Failed to parse maintenance window:", err.Error())
 	} else {
-		shouldLock := !timeutils.IsInMaintenanceWindow(now, *start, *end)
-
-		if shouldLock {
+		if !inWindow {
 			fmt.Println("Not in maintenance window, taking lock...")
 			locked, err := lock.TryLock()
 			if err != nil {

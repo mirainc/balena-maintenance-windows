@@ -14,9 +14,8 @@ func getTimeFromStringOnSpecificDay(time string, year int, month time.Month, day
 	return fullTime
 }
 
-func ParseMaintenanceWindow(value string, now time.Time) (*time.Time, *time.Time, error) {
+func parseMaintenanceWindow(value string, now time.Time) (*time.Time, *time.Time, error) {
 	location := now.Location()
-
 	year := now.Year()
 	month := now.Month()
 	day := now.Day()
@@ -47,8 +46,11 @@ func ParseMaintenanceWindow(value string, now time.Time) (*time.Time, *time.Time
 	return &start, &end, err
 }
 
-func IsInMaintenanceWindow(now time.Time, start time.Time, end time.Time) bool {
+func isInMaintenanceWindowSimple(now time.Time, start time.Time, end time.Time) bool {
+	return (now.After(start) && now.Before(end)) || now.Equal(start)
+}
 
+func isInMaintenanceWindow(now time.Time, start time.Time, end time.Time) bool {
 	location := now.Location()
 	year := now.Year()
 	month := now.Month()
@@ -65,11 +67,19 @@ func IsInMaintenanceWindow(now time.Time, start time.Time, end time.Time) bool {
 		fmt.Println("Start:", start)
 		fmt.Println("End of Day:", eodToday)
 		fmt.Println("Now:", now)
-		return (now.After(start) && now.Before(eodToday)) || (now.After(sodToday) && now.Before(end))
+		return isInMaintenanceWindowSimple(now, start, eodToday) || isInMaintenanceWindowSimple(now, sodToday, end)
 	} else {
 		fmt.Println("Start:", start)
 		fmt.Println("End:", end)
 		fmt.Println("Now:", now)
-		return now.After(start) && now.Before(end)
+		return isInMaintenanceWindowSimple(now, start, end)
 	}
+}
+
+func IsInMaintenanceWindow(value string, now time.Time) (bool, error) {
+	start, end, err := parseMaintenanceWindow(value, now)
+	if err != nil {
+		return false, err
+	}
+	return isInMaintenanceWindow(now, *start, *end), nil
 }

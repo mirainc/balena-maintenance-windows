@@ -48,7 +48,7 @@ func GetTagValue(apiKey string, uuid string, tagKey string) (string, error) {
 		return "", err
 	}
 	if !resp.Ok {
-		message := fmt.Sprintf("Request failed with response status code: %s", resp.StatusCode)
+		message := fmt.Sprintf("Request failed with response status code: %d", resp.StatusCode)
 		return "", errors.New(message)
 	}
 
@@ -59,9 +59,11 @@ func GetTagValue(apiKey string, uuid string, tagKey string) (string, error) {
 	}
 
 	if len(tags.Data) == 0 {
+		fmt.Println("No maintenance window set, default to any time.")
 		return "", nil
 	} else {
 		window := tags.Data[0].Value
+		fmt.Println("Maintenance window found: [", window, "]")
 		return window, nil
 	}
 }

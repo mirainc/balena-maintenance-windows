@@ -14,15 +14,5 @@ COPY ./balenaapi ./balenaapi
 COPY ./timeutils ./timeutils
 
 RUN dep ensure
-RUN go install -v ./...
 
-FROM balenalib/intel-nuc-debian:stretch-run-20190511
-WORKDIR /go/src/balena-maintenance-windows
-
-COPY --from=build /go/bin/balena-maintenance-windows /usr/local/bin/balena-maintenance-windows
-COPY ./start-debian.sh .
-RUN chmod +x ./start-debian.sh
-
-ENV TIMEZONE UTC
-
-CMD ["./start-debian.sh"]
+CMD ["go", "test", "./..."]
