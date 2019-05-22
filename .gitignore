@@ -2,3 +2,5 @@ vendor
 balena-maintenance-windows
 scratch
 .env
+dockercfg
+*.aes

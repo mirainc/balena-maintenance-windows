@@ -6,8 +6,8 @@
         command: echo "Done"
       - service: test
         command: go test ./...
-  # - type: serial
-  #   tag: ^(master)
-  #   service: build
-  #   steps:
-  #     - command: make push-docker-hub tag=master
+  - type: push
+    tag: ^(master)
+    service: build
+    image_name: mirainc/balena-maintenance-windows
+    encrypted_dockercfg_path: dockercfg.encrypted

@@ -29,3 +29,9 @@ test-local: build-local
 
 test: build-test
 	@docker run -t -i --name balena-maintenance-windows-test mirainc/balena-maintenance-windows-test
+
+encrypt-creds:
+	jet encrypt dockercfg dockercfg.encrypted --key-path=mirainc_balena-maintenance-windows.aes
+
+decrypt-creds:
+	jet decrypt dockercfg.encrypted dockercfg --key-path=mirainc_balena-maintenance-windows.aes
