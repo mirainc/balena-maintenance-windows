@@ -5,19 +5,19 @@ RUN apt-get install curl
 
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
-WORKDIR /go/src/balena-maintenance-windows
+WORKDIR /go/src/github.com/mirainc/balena-maintenance-windows
 
 COPY ./Gopkg.lock .
 COPY ./Gopkg.toml .
 COPY ./main.go .
-COPY ./balenaapi ./balenaapi
-COPY ./timeutils ./timeutils
+COPY ./balenaapi/* ./balenaapi/
+COPY ./timeutils/* ./timeutils/
 
 RUN dep ensure
 RUN go install -v ./...
 
 FROM balenalib/intel-nuc-debian:stretch-run-20190511
-WORKDIR /go/src/balena-maintenance-windows
+WORKDIR /usr/src/balena-maintenance-windows
 
 COPY --from=build /go/bin/balena-maintenance-windows /usr/local/bin/balena-maintenance-windows
 COPY ./start-debian.sh .

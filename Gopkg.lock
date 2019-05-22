@@ -26,6 +26,14 @@
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
+  name = "github.com/konsorten/go-windows-terminal-sequences"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
+  version = "v1.0.2"
+
+[[projects]]
   digest = "1:c34de7e8f144a065dbcd5a5dab3dfc865d406545da86cd5a654fa720abfa8126"
   name = "github.com/levigross/grequests"
   packages = ["."]
@@ -40,6 +48,14 @@
   pruneopts = "UT"
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
   version = "v1.0.0"
+
+[[projects]]
+  digest = "1:04457f9f6f3ffc5fea48e71d62f2ca256637dee0a04d710288e27e05c8b41976"
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "839c75faf7f98a33d445d181f3018b5c3409a45e"
+  version = "v1.4.2"
 
 [[projects]]
   digest = "1:972c2427413d41a1e06ca4897e8528e5a1622894050e2f527b38ddf0f343f759"
@@ -59,6 +75,14 @@
   ]
   pruneopts = "UT"
   revision = "018c4d40a106a7ae83689758294fcd8d23850745"
+
+[[projects]]
+  branch = "master"
+  digest = "1:6ed9319f79a63e30779042ef237f81770df4091866e43f84a643257384b0aefc"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  pruneopts = "UT"
+  revision = "c432e742b0af385916e013f6a34e9e73d139cf82"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -91,6 +115,7 @@
   input-imports = [
     "github.com/gofrs/flock",
     "github.com/levigross/grequests",
+    "github.com/sirupsen/logrus",
     "github.com/stretchr/testify/assert",
   ]
   solver-name = "gps-cdcl"

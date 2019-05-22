@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"strings"
 	"time"
+
+	log "github.com/sirupsen/logrus"
 )
 
 var TIME_FORMAT = "2006/1/2T15:04:05"
+var logger = log.WithFields(log.Fields{"package": "timeutils"})
 
 func getTimeFromStringOnSpecificDay(time string, year int, month time.Month, day int) string {
 	fullTime := fmt.Sprintf("%d/%d/%dT%s", year, month, day, time)
@@ -62,16 +65,12 @@ func isInMaintenanceWindow(now time.Time, start time.Time, end time.Time) bool {
 		// Handle this by creating two time windows.
 		sodToday := time.Date(year, month, day, 0, 0, 0, 0, location)
 		eodToday := time.Date(year, month, day, 23, 59, 59, 999999999, location)
-		fmt.Println("Start of Day:", sodToday)
-		fmt.Println("End:", end)
-		fmt.Println("Start:", start)
-		fmt.Println("End of Day:", eodToday)
-		fmt.Println("Now:", now)
+		logger.Debug("[ ", sodToday, " - ", end, " + ", start, " - ", eodToday, " ]")
+		logger.Debug("Now: ", now)
 		return isInMaintenanceWindowSimple(now, start, eodToday) || isInMaintenanceWindowSimple(now, sodToday, end)
 	} else {
-		fmt.Println("Start:", start)
-		fmt.Println("End:", end)
-		fmt.Println("Now:", now)
+		logger.Debug("[ ", start, " - ", end, " ]")
+		logger.Debug("Now:", now)
 		return isInMaintenanceWindowSimple(now, start, end)
 	}
 }

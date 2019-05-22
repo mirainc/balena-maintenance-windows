@@ -1,14 +1,18 @@
 all: build run
 
-build:
+build: clean
 	@docker build -t mirainc/balena-maintenance-windows .
 
 build-test:
 	@docker build -t mirainc/balena-maintenance-windows-test -f Dockerfile.test .
 
+clean:
+	-@docker kill balena-maintenance-windows
+	-@docker rm balena-maintenance-windows
+
 run:
 	@touch .env
-	@docker run --env-file .env --name balena-maintenance-windows mirainc/balena-maintenance-windows
+	@docker run -t -i --env-file .env --name balena-maintenance-windows mirainc/balena-maintenance-windows
 
 run-local: build-local
 	@./balena-maintenance-windows
@@ -24,4 +28,4 @@ test-local: build-local
 	@go test ./...
 
 test: build-test
-	@docker run --name balena-maintenance-windows-test mirainc/balena-maintenance-windows-test
+	@docker run -t -i --name balena-maintenance-windows-test mirainc/balena-maintenance-windows-test

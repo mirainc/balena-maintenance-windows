@@ -16,13 +16,14 @@ BALENA_API_KEY
 BALENA_DEVICE_UUID
 ```
 
-Re
+Required env vars:
 ```bash
 TIMEZONE=America/Los_Angeles
 ```
 
 Optional env vars respected:
 ```bash
+LOG_LEVEL=panic|fatal|error|warn|info|debug|trace
 LOCKFILE_LOCATION=/tmp/balena
 CHECK_INTERVAL_SECONDS=60
 ```
