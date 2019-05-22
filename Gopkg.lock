@@ -10,14 +10,6 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:d7b2d6ad2a9768bb5c9e3bfa4d9ceaa635ca2737cca288507986f116fa4b8da2"
-  name = "github.com/gofrs/flock"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "392e7fae8f1b0bdbd67dad7237d23f618feb6dbb"
-  version = "v0.7.1"
-
-[[projects]]
   digest = "1:a63cff6b5d8b95638bfe300385d93b2a6d9d687734b863da8e09dc834510a690"
   name = "github.com/google/go-querystring"
   packages = ["query"]
@@ -113,7 +105,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/gofrs/flock",
     "github.com/levigross/grequests",
     "github.com/sirupsen/logrus",
     "github.com/stretchr/testify/assert",

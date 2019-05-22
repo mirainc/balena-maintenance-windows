@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/gofrs/flock"
 	"github.com/mirainc/balena-maintenance-windows/balenaapi"
+	"github.com/mirainc/balena-maintenance-windows/lockfile"
 	"github.com/mirainc/balena-maintenance-windows/timeutils"
 	log "github.com/sirupsen/logrus"
 )
@@ -62,7 +62,7 @@ func getCheckInterval() time.Duration {
 	return interval
 }
 
-func loopIteration(lock *flock.Flock) {
+func loopIteration(lock *lockfile.Lockfile) {
 	now := time.Now()
 
 	maintenanceWindowValue, err := balenaapi.GetTagValue(BALENA_API_KEY, BALENA_DEVICE_UUID, MAINTENANCE_WINDOW_TAG_KEY)
@@ -77,14 +77,11 @@ func loopIteration(lock *flock.Flock) {
 	} else {
 		if !inWindow {
 			logger.Info("Not in maintenance window, taking lock...")
-			locked, err := lock.TryLock()
+			err := lock.Lock()
 			if err != nil {
 				logger.Error("Failed to take lock:", err.Error())
-			}
-			if locked {
-				logger.Info("Lock taken successfully.")
 			} else {
-				logger.Error("Failed to take lock - locked by another thread.")
+				logger.Info("Lock taken successfully.")
 			}
 		} else {
 			logger.Info("In maintenance window, unlocking...")
@@ -98,7 +95,7 @@ func loopIteration(lock *flock.Flock) {
 	}
 }
 
-func loop(lock *flock.Flock, interval time.Duration) {
+func loop(lock *lockfile.Lockfile, interval time.Duration) {
 	for {
 		loopIteration(lock)
 		logger.Info("Waiting ", interval.Seconds(), " seconds...")
@@ -120,7 +117,7 @@ func main() {
 	interval := getCheckInterval()
 	logger.Info("Check interval (seconds): ", interval.Seconds())
 
-	lock := flock.New(lockfileLocation)
+	lock := lockfile.New(lockfileLocation)
 
 	// Start check process.
 	loop(lock, interval)
