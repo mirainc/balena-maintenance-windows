@@ -8,6 +8,7 @@
         command: go test ./...
   - type: push
     tag: ^(master)
+    image_tag: "{{ .Branch }}-{{ .CommitID }}"
     service: build
     image_name: mirainc/balena-maintenance-windows
     encrypted_dockercfg_path: dockercfg.encrypted
