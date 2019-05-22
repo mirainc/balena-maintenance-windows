@@ -1,0 +1,11 @@
+build:
+  build:
+    image: balena-maintenance-windows
+    path: .
+    dockerfile_path: Dockerfile
+  # encrypted_env_file: deploy.env.encrypted
+test:
+  build:
+    image: test
+    path: .
+    dockerfile_path: Dockerfile.test

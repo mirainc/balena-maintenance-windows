@@ -1,0 +1,12 @@
+- type: serial
+  steps:
+  - type: parallel
+    steps:
+      - service: build
+        command: echo "Done"
+      - service: test
+  # - type: serial
+  #   tag: ^(master)
+  #   service: build
+  #   steps:
+  #     - command: make push-docker-hub tag=master
