@@ -5,6 +5,7 @@
       - service: build
         command: echo "Done"
       - service: test
+        command: go test ./...
   # - type: serial
   #   tag: ^(master)
   #   service: build
