@@ -12,6 +12,7 @@ COPY ./Gopkg.toml .
 COPY ./main.go .
 COPY ./balenaapi ./balenaapi
 COPY ./timeutils ./timeutils
+COPY ./lockfile ./lockfile
 
 RUN dep ensure
 

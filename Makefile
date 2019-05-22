@@ -3,10 +3,12 @@ all: build run
 build: clean
 	@docker build -t mirainc/balena-maintenance-windows .
 
-build-test:
+build-test: clean
 	@docker build -t mirainc/balena-maintenance-windows-test -f Dockerfile.test .
 
 clean:
+	-@docker kill balena-maintenance-windows-test
+	-@docker rm balena-maintenance-windows-test
 	-@docker kill balena-maintenance-windows
 	-@docker rm balena-maintenance-windows
 

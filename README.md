@@ -41,3 +41,15 @@ Run:
 make run-local
 ```
 to build and run the Go application locally.
+
+### Tests
+
+To run test suite (Dockerized):
+```
+make test
+```
+
+To run test suite locally:
+```
+make test-local
+```
