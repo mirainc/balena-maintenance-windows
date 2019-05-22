@@ -14,7 +14,6 @@ import (
 
 var BALENA_API_KEY = os.Getenv("BALENA_API_KEY")
 var BALENA_DEVICE_UUID = os.Getenv("BALENA_DEVICE_UUID")
-var TIMEZONE = os.Getenv("TIMEZONE")
 var MAINTENANCE_WINDOW_TAG_KEY = "MAINTENANCE_WINDOW"
 
 var logger = log.WithFields(log.Fields{})

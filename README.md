@@ -10,22 +10,32 @@ It uses the balena [Application Update Locking](https://www.balena.io/docs/learn
 
 ## Parameters
 
+### Maintenance Windows
+
+Maintenance windows are set on a per-device basis using [balena device tags](https://www.balena.io/docs/learn/manage/filters-tags/#device-tags). The accepted tag format is:
+```
+Tag Name: MAINTENANCE_WINDOW
+Value: 17:00:00_23:00:00
+```
+
+Maintenance windows are always evaluated based on the container's system timezone, to ensure local times affected by things like DST are respected. The container timezone can be changed by using the `TIMEZONE` env var, and defaults to UTC.
+
+Window values crossing midnight, e.g. `23:00:00_02:00:00`, are accepted. They operate "as expected" - in this case, "starting at 11PM and ending at 2AM".
+
+### Environment Variables
+
 balena internal env vars used:
 ```bash
 BALENA_API_KEY
 BALENA_DEVICE_UUID
 ```
 
-Required env vars:
-```bash
-TIMEZONE=America/Los_Angeles
-```
-
 Optional env vars respected:
 ```bash
-LOG_LEVEL=panic|fatal|error|warn|info|debug|trace
+TIMEZONE=America/Los_Angeles
 LOCKFILE_LOCATION=/tmp/balena
 CHECK_INTERVAL_SECONDS=60
+LOG_LEVEL=panic|fatal|error|warn|info|debug|trace
 ```
 
 ## Development
