@@ -18,6 +18,8 @@ Tag Name: MAINTENANCE_WINDOW
 Value: 17:00:00_23:00:00
 ```
 
+If a maintenance window tag is not set, the window is always open.
+
 Maintenance windows are always evaluated based on the container's system timezone, to ensure local times affected by things like DST are respected. The container timezone can be changed by using the `TIMEZONE` env var, and defaults to UTC.
 
 Window values crossing midnight, e.g. `23:00:00_02:00:00`, are accepted. They operate "as expected" - in this case, "starting at 11PM and ending at 2AM".
