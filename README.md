@@ -2,6 +2,23 @@
 
 Maintenance window support for balena devices.
 
+## Usage
+
+This app is available as a docker container on [Docker Hub](https://hub.docker.com/r/mirainc/balena-maintenance-windows/tags). Currently it is only built using balenalib `intel-nuc-debian` base images, and is only compatible with Intel NUC or similar x86 devices.
+
+If support for other architectures is needed, please open a Github issue.
+
+To add this to an existing balena multicontainer `docker-compose.yml`, find the most up-to-date `master-<commit-hash>` tag in [Docker Hub](https://hub.docker.com/r/mirainc/balena-maintenance-windows/tags). Then add this to your `services`:
+
+```yaml
+update-supervisor:
+    image: mirainc/balena-maintenance-windows:master-<commit_hash>
+    restart: always
+    labels:
+      io.balena.features.balena-api: '1'
+```
+
+
 ## Design
 
 This app is meant to be deployed as a container on balena devices. It will poll the balena API every 10 minutes to see if it is within a maintenance window, based on the `MAINTENANCE_WINDOW` tag assigned to that device. If there is no tag set, it assumes the device is always available for updates.
