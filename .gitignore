@@ -1,5 +1,6 @@
 vendor
 balena-maintenance-windows
+balena-maintenance-windows.sublime-workspace
 scratch
 .env
 dockercfg
