@@ -61,7 +61,7 @@ func GetTagValue(apiKey string, uuid string, tagKey string) (string, error) {
 	if len(tags.Data) == 0 {
 		return "", nil
 	} else if len(tags.Data) > 1 {
-		return "", errors.New(fmt.Sprintf("Expected only 1 tag, received %s", len(tags.Data)))
+		return "", errors.New(fmt.Sprintf("Expected only 1 tag, received %d", len(tags.Data)))
 	} else {
 		window := tags.Data[0].Value
 		return window, nil
