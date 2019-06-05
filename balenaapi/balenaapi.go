@@ -37,7 +37,7 @@ func GetTagValue(apiKey string, uuid string, tagKey string) (string, error) {
 		},
 		RequestTimeout: time.Duration(5) * time.Second,
 	}
-	filters, err := UrlEncoded(fmt.Sprintf("$filter=device/uuid eq '%s'&$filter=tag_key eq '%s'", uuid, tagKey))
+	filters, err := UrlEncoded(fmt.Sprintf("$filter=device/uuid eq '%s' and tag_key eq '%s'", uuid, tagKey))
 	if err != nil {
 		return "", err
 	}
@@ -60,6 +60,8 @@ func GetTagValue(apiKey string, uuid string, tagKey string) (string, error) {
 
 	if len(tags.Data) == 0 {
 		return "", nil
+	} else if len(tags.Data) > 1 {
+		return "", errors.New(fmt.Sprintf("Expected only 1 tag, received %d", len(tags.Data)))
 	} else {
 		window := tags.Data[0].Value
 		return window, nil
